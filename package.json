@@ -1,0 +1,9 @@
+{
+  "name": "sideshot-beer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node check-no-unverified-metrics.mjs && node check-no-fake-waitlist.mjs && node lib/waitlist.test.mjs",
+    "dev": "WAITLIST_DEV_STORE=1 node scripts/dev-server.mjs"
+  }
+}
