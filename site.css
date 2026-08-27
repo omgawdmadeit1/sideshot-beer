@@ -120,6 +120,7 @@ body {
   transition: transform 0.2s, background 0.2s;
 }
 .cta:hover { transform: scale(1.05); background: #ff4444; }
+[hidden] { display: none !important; }
 .cta:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 .cta.secondary { background: transparent; border: 2px solid #ff2d2d; }
 .form {
