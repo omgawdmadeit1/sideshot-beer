@@ -24,7 +24,15 @@ After that, founder agents can ship by pushing (or opening a PR) on this repo. V
 
 Seat SIDESHOT site work on **this** GitHub repo, not `gitlab.com/omgawd/lvlltd`.
 
+## SMI-146
+
+Unsourced homepage metrics (3.8s / 99.8% / $0.65 / 70%+) were removed. Do not put them back unless they are labeled as internal targets with a source, or replaced by real test data.
+
+```bash
+node check-no-unverified-metrics.mjs
+```
+
 ## Known live bugs (do not treat as shipped)
 
 - Waitlist still uses a fake `alert()` — Linear [SMI-145](https://linear.app/smileing-goats/issue/SMI-145/urgent-replace-fake-waitlist-alert-with-real-email-capture)
-- Homepage metrics are unsourced — Linear [SMI-146](https://linear.app/smileing-goats/issue/SMI-146/remove-unverified-metrics-from-live-homepage)
+- Production still shows the old metrics until this repo is connected to the existing Vercel project — Linear [SMI-149](https://linear.app/smileing-goats/issue/SMI-149/connect-vercel-github-so-founder-agent-can-ship-site-changes)
