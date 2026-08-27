@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIDESHOT SafeShot™ — waitlist</title>
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <span>SIDESHOT</span>
+    <div>
+      <a href="/">Home</a>
+      <a href="/safeshot" aria-current="page">SafeShot</a>
+    </div>
+  </nav>
+
+  <div class="logo-lockup">
+    <div class="logo"><a href="/">SIDESHOT</a></div>
+  </div>
+  <p class="tagline">SafeShot™ — official tool</p>
+  <p class="sub">Punch. Open. Lift the tab. Then start the Side Quest.</p>
+
+  <div class="gallery" aria-label="SafeShot concept gallery">
+    <div class="gallery-item">
+      <div class="tool-mock" role="img" aria-label="Concept silhouette of a pocket punch and opener"></div>
+      <p>Concept — punch + opener silhouette</p>
+    </div>
+    <div class="gallery-item">
+      <div class="tool-mock" role="img" aria-label="Concept keychain-scale tool"></div>
+      <p>Concept — keychain scale</p>
+    </div>
+    <div class="gallery-item">
+      <div class="can-mock" aria-hidden="true"><div class="score">SIDE</div></div>
+      <p>Concept — can + side opening</p>
+    </div>
+  </div>
+  <p class="caption">Concept renders only. Product photos are not on file yet. These are not finished SKU photos.</p>
+
+  <div class="section">
+    <h2>What it is</h2>
+    <p>A pocket / keychain tool for adults 21+: a clean round sidewall punch for a 12 oz aluminum can, a crown-cap bottle opener, and a stay-on-tab lifter. First-run intent is US CNC 6061-T6 with anodize and a SIDESHOT mark.</p>
+    <p class="bundle-note">No drinking tube. No funnel. No blade. Bundle language (tool + branded cans) stays secondary until the tool is real inventory.</p>
+  </div>
+
+  <div class="section">
+    <h2>Spec (intent — CAD not locked)</h2>
+    <table class="spec">
+      <tr><th>Functions</th><td>Can punch, bottle opener, tab lifter, key-ring hole</td></tr>
+      <tr><th>Forbidden</th><td>Drinking tube, funnel, mouthpiece, knife edge</td></tr>
+      <tr><th>Size target</th><td>About 55–75 mm long, keychain scale</td></tr>
+      <tr><th>Material path</th><td>6061-T6 aluminum recommended; stainless sheet is the fallback</td></tr>
+      <tr><th>Price</th><td>Not set. RFQ and first article are still open. Category peers sell similar tools around $14–$22; that is not our price.</td></tr>
+      <tr><th>Age</th><td>21+ only. Pointed metal tool. Keep away from children.</td></tr>
+    </table>
+    <p>We will not invent an MSRP or a ship date. Pre-order replaces the waitlist button only after unit economics are locked.</p>
+  </div>
+
+  <div class="section" id="safeshot-waitlist">
+    <h2>Join the SafeShot™ waitlist</h2>
+    <p class="cta-note">No checkout yet. This stores your email. It does not charge a card and it does not pretend a pre-order went through.</p>
+    <a class="cta" id="safeshot-preorder" hidden href="#">Pre-order SafeShot™</a>
+    <form class="form" id="waitlist-form" action="/api/waitlist" method="post" novalidate>
+      <input type="hidden" name="source" value="safeshot">
+      <input type="hidden" name="interest" value="SafeShot">
+      <label class="hp" aria-hidden="true">Leave blank <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row">
+        <input type="email" id="email" name="email" required placeholder="Email for SafeShot launch" autocomplete="email">
+        <button class="cta" type="submit" style="padding: 16px 32px;">GET EARLY ACCESS</button>
+      </div>
+      <label class="age">
+        <input type="checkbox" name="ageConfirmed" value="true" required>
+        I am 21 or older
+      </label>
+      <p class="status" id="waitlist-status" role="status"></p>
+      <noscript>JavaScript is required to join the waitlist so we can confirm the signup was stored.</noscript>
+    </form>
+  </div>
+
+  <p class="resp">21+ only. This is a pointed metal tool. Keep away from children. Risk of cuts. Rapid alcohol consumption is dangerous. Drink responsibly. Do not drink and drive. Not for sale to minors. User assumes the risk. SIDESHOT does not promote excessive drinking or forced consumption.</p>
+
+  <footer>© 2026 SIDESHOT Beer Co. · Every can is a Side Quest</footer>
+  <script src="/waitlist.js"></script>
+  <script src="/safeshot.js"></script>
+</body>
+</html>

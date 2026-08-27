@@ -4,47 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIDESHOT — Start the Side Quest</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px; line-height: 1.5; }
-    .logo { font-size: 3.8rem; font-weight: 900; letter-spacing: -2px; margin: 40px 0 8px; background: linear-gradient(90deg, #ff2d2d, #ff8a00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .tagline { font-size: 1.5rem; color: #ccc; margin-bottom: 12px; max-width: 560px; }
-    .sub { font-size: 1.1rem; color: #888; margin-bottom: 40px; }
-    .can-mock { width: 180px; height: 320px; background: linear-gradient(180deg, #222 0%, #111 100%); border-radius: 20px 20px 40px 40px; border: 3px solid #444; position: relative; margin: 0 auto 40px; box-shadow: 0 20px 60px rgba(255,45,45,0.35); }
-    .score { position: absolute; bottom: 55px; left: 18px; width: 46px; height: 32px; background: #ff2d2d; border-radius: 50%; border: 2px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; letter-spacing: 0.5px; }
-    .cta { background: #ff2d2d; color: white; border: none; padding: 18px 48px; font-size: 1.15rem; font-weight: 700; border-radius: 50px; cursor: pointer; transition: transform 0.2s, background 0.2s; }
-    .cta:hover { transform: scale(1.05); background: #ff4444; }
-    .form { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-    input { padding: 16px 24px; border-radius: 50px; border: 2px solid #333; background: #1a1a1a; color: white; font-size: 1rem; min-width: 280px; }
-    .metrics { margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; max-width: 720px; width: 100%; }
-    .metric { background: #151515; padding: 22px 16px; border-radius: 12px; border: 1px solid #222; }
-    .metric-num { font-size: 1.9rem; font-weight: 800; color: #ff2d2d; }
-    .metric-label { font-size: 0.85rem; color: #888; margin-top: 4px; }
-    .section { max-width: 680px; margin: 70px auto 0; text-align: left; padding: 0 10px; }
-    .section h2 { font-size: 1.6rem; margin-bottom: 16px; color: #ff6b00; }
-    .section p { color: #bbb; margin-bottom: 14px; }
-    .tool-card { background: #151515; border: 1px solid #333; border-radius: 16px; padding: 28px; margin-top: 24px; text-align: center; }
-    .tool-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
-    footer { margin-top: 80px; color: #555; font-size: 0.9rem; padding-bottom: 40px; }
-    .resp { font-size: 0.85rem; color: #666; margin-top: 30px; max-width: 500px; }
-  </style>
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-  <div class="logo">SIDESHOT</div>
+  <nav class="nav" aria-label="Primary">
+    <span>SIDESHOT</span>
+    <div>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/safeshot">SafeShot</a>
+    </div>
+  </nav>
+
+  <div class="logo-lockup">
+    <div class="logo">SIDESHOT</div>
+  </div>
   <p class="tagline">The Can That Comes Ready to Shotgun</p>
   <p class="sub">Every can is a Side Quest. Open the side. Own the moment.</p>
-  
-  <div class="can-mock">
+
+  <div class="can-mock" aria-hidden="true">
     <div class="score">SIDE</div>
   </div>
-  
-  <button class="cta" onclick="document.getElementById('email').focus()">JOIN THE WAITLIST</button>
-  
-  <div class="form">
-    <input type="email" id="email" placeholder="Enter your email for launch access">
-    <button class="cta" style="padding: 16px 32px;" onclick="alert('You\'re on the list. The Side Quest starts soon.')">GET EARLY ACCESS</button>
-  </div>
-  
+
+  <a class="cta" href="#waitlist-form">JOIN THE WAITLIST</a>
+
+  <form class="form" id="waitlist-form" action="/api/waitlist" method="post" novalidate>
+    <input type="hidden" name="source" value="homepage">
+    <input type="hidden" name="interest" value="cans">
+    <label class="hp" aria-hidden="true">Leave blank <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <div class="form-row">
+      <input type="email" id="email" name="email" required placeholder="Enter your email for launch access" autocomplete="email">
+      <button class="cta" type="submit" style="padding: 16px 32px;">GET EARLY ACCESS</button>
+    </div>
+    <label class="age">
+      <input type="checkbox" name="ageConfirmed" value="true" required>
+      I am 21 or older
+    </label>
+    <p class="status" id="waitlist-status" role="status"></p>
+    <noscript>JavaScript is required to join the waitlist so we can confirm the signup was stored.</noscript>
+  </form>
+
   <div class="metrics">
     <div class="metric"><div class="metric-num">3.8s</div><div class="metric-label">Avg Drain Time</div></div>
     <div class="metric"><div class="metric-num">99.8%</div><div class="metric-label">Can Integrity</div></div>
@@ -63,7 +61,8 @@
     <div class="tool-card">
       <h3>SIDESHOT SafeShot™</h3>
       <p style="color:#aaa; margin-bottom:18px;">Clean. Round. Ready.<br>Perfect side hole for shotgunning + bottle opener + tab lifter.</p>
-      <p style="font-size:0.95rem; color:#888;">Phase 1 product — available soon. Bundle with branded cans or standalone.</p>
+      <p style="font-size:0.95rem; color:#888; margin-bottom:18px;">Phase 1 product — waitlist open. Price not set. Bundle with branded cans stays secondary.</p>
+      <a class="cta secondary" href="/safeshot">See SafeShot</a>
     </div>
   </div>
 
@@ -75,7 +74,8 @@
   </div>
 
   <p class="resp">21+ only. Drink responsibly. Never force consumption. Shotgunning is for adults who choose it.</p>
-  
+
   <footer>© 2026 SIDESHOT Beer Co. · Every can is a Side Quest</footer>
+  <script src="/waitlist.js"></script>
 </body>
 </html>
