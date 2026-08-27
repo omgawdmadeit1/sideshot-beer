@@ -40,7 +40,10 @@ After that, founder agents can ship by pushing (or opening a PR) on this repo. V
 
 Seat SIDESHOT site work on **this** GitHub repo, not `gitlab.com/omgawd/lvlltd`.
 
-## Known live bugs (do not treat as shipped)
+## Homepage metrics (SMI-146)
 
-- Homepage metrics are unsourced — Linear [SMI-146](https://linear.app/smileing-goats/issue/SMI-146/remove-unverified-metrics-from-live-homepage)
+Unverified numbers (3.8s / 99.8% / $0.65 / 70%+) are not shown. `npm test` fails if they return.
+
+## Known live blockers (do not treat as shipped)
+
 - Waitlist code is in this repo. Live still needs the existing Vercel project connected to Git plus `NOTION_TOKEN` and/or `WAITLIST_NOTIFY_EMAIL` — Linear [SMI-145](https://linear.app/smileing-goats/issue/SMI-145/urgent-replace-fake-waitlist-alert-with-real-email-capture) / [SMI-203](https://linear.app/smileing-goats/issue/SMI-203/founder-attach-omgawdmadeit1sideshot-beer-to-existing-vercel-project)
