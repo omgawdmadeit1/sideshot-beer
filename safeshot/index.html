@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIDESHOT SafeShot — waitlist</title>
+  <title>SIDESHOT™ SafeShot™ — waitlist</title>
   <link rel="stylesheet" href="/site.css">
 </head>
 <body>
@@ -15,8 +15,11 @@
     </div>
   </nav>
 
-  <div class="logo"><a href="/">SIDESHOT</a></div>
-  <p class="tagline">SafeShot — official tool</p>
+  <div class="logo-lockup">
+    <div class="logo"><a href="/">SIDESHOT</a></div>
+    <span class="tm" aria-label="trademark">™</span>
+  </div>
+  <p class="tagline">SafeShot™ — official tool</p>
   <p class="sub">Punch. Open. Lift the tab. Then start the Side Quest.</p>
 
   <div class="tool-mock" role="img" aria-label="Concept silhouette of a pocket punch and opener"></div>
@@ -42,9 +45,9 @@
   </div>
 
   <div class="section" id="safeshot-waitlist">
-    <h2>Join the waitlist</h2>
+    <h2>Join the SafeShot™ waitlist</h2>
     <p class="cta-note">No checkout yet. This stores your email. It does not charge a card and it does not pretend a pre-order went through.</p>
-    <a class="cta" id="safeshot-preorder" hidden href="#">Pre-order SafeShot</a>
+    <a class="cta" id="safeshot-preorder" hidden href="#">Pre-order SafeShot™</a>
     <form class="form" id="waitlist-form" action="/api/waitlist" method="post" novalidate>
       <input type="hidden" name="source" value="safeshot">
       <input type="hidden" name="interest" value="SafeShot">
@@ -64,7 +67,7 @@
 
   <p class="resp">21+ only. This is a pointed metal tool. Keep away from children. Risk of cuts. Rapid alcohol consumption is dangerous. Drink responsibly. Do not drink and drive. Not for sale to minors. User assumes the risk. SIDESHOT does not promote excessive drinking or forced consumption.</p>
 
-  <footer>© 2026 SIDESHOT Beer Co. · Every can is a Side Quest</footer>
+  <footer>© 2026 SIDESHOT™ Beer Co. · Every can is a Side Quest</footer>
   <script src="/waitlist.js"></script>
   <script src="/safeshot.js"></script>
 </body>

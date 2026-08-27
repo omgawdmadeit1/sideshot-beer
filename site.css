@@ -22,14 +22,29 @@ body {
 }
 .nav a { color: #ccc; text-decoration: none; margin-left: 16px; }
 .nav a:hover, .nav a[aria-current="page"] { color: #ff8a00; }
+.logo-lockup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  margin: 40px 0 8px;
+}
 .logo {
   font-size: 3.8rem;
   font-weight: 900;
   letter-spacing: -2px;
-  margin: 40px 0 8px;
+  margin: 0;
   background: linear-gradient(90deg, #ff2d2d, #ff8a00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.tm {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-top: 10px;
+  color: #ff8a00;
+  line-height: 1;
 }
 .logo a { color: inherit; text-decoration: none; }
 .tagline { font-size: 1.5rem; color: #ccc; margin-bottom: 12px; max-width: 560px; }
