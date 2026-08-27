@@ -12,13 +12,7 @@ Static `index.html` on Vercel. Production branch: `main`.
 
 Do **not** import this as a new Vercel project. That mints a new `*.vercel.app` URL.
 
-1. Open the Vercel project that already serves `sideshot-beer.vercel.app`.
-2. **Settings → Git → Connect Git Repository**.
-3. Select `omgawdmadeit1/sideshot-beer`.
-4. Production branch = `main`.
-5. Confirm the next production deploy still aliases to `https://sideshot-beer.vercel.app`.
-
-After that, founder agents can ship by pushing (or opening a PR) on this repo. Vercel will build from Git.
+Exact founder clicks + waitlist env vars (`NOTION_TOKEN` / `WAITLIST_NOTIFY_EMAIL`) are in [`docs/vercel-git-attach.md`](docs/vercel-git-attach.md) (Linear SMI-203). After Git attach, merge `cursor/sideshot-waitlist-capture-7085` (SMI-145).
 
 ## Agent seating
 
