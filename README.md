@@ -6,7 +6,23 @@ This repository is the **source of truth** for [https://sideshot-beer.vercel.app
 
 ## Stack
 
-Static `index.html` on Vercel. Production branch: `main`.
+Static `index.html` on Vercel plus `POST /api/waitlist`. Production branch: `main`.
+
+## Waitlist (SMI-145)
+
+Homepage form posts to `/api/waitlist` (also `/api/sideshot/waitlist`). Signups require a valid email and 21+ confirmation. Success is only returned after a store accepts the write.
+
+Production stores (at least one required on Vercel):
+
+- `NOTION_TOKEN` → [SIDESHOT Waitlist](https://app.notion.com/p/2c3dc9f4c4454e3ebd1248d8aaed2818)
+- `WAITLIST_NOTIFY_EMAIL` → founder inbox via FormSubmit, or Resend when `RESEND_API_KEY` is set
+
+Local `.data/sideshot-waitlist.json` is **dev only**. Production without a store returns an error instead of a fake join.
+
+```bash
+npm test
+npm run dev   # http://0.0.0.0:4173
+```
 
 ## Connect this repo to the existing Vercel project
 
@@ -26,5 +42,5 @@ Seat SIDESHOT site work on **this** GitHub repo, not `gitlab.com/omgawd/lvlltd`.
 
 ## Known live bugs (do not treat as shipped)
 
-- Waitlist still uses a fake `alert()` — Linear [SMI-145](https://linear.app/smileing-goats/issue/SMI-145/urgent-replace-fake-waitlist-alert-with-real-email-capture)
 - Homepage metrics are unsourced — Linear [SMI-146](https://linear.app/smileing-goats/issue/SMI-146/remove-unverified-metrics-from-live-homepage)
+- Waitlist code is in this repo. Live still needs the existing Vercel project connected to Git plus `NOTION_TOKEN` and/or `WAITLIST_NOTIFY_EMAIL` — Linear [SMI-145](https://linear.app/smileing-goats/issue/SMI-145/urgent-replace-fake-waitlist-alert-with-real-email-capture) / [SMI-203](https://linear.app/smileing-goats/issue/SMI-203/founder-attach-omgawdmadeit1sideshot-beer-to-existing-vercel-project)
