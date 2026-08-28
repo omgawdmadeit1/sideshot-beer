@@ -3,7 +3,7 @@
 Linear: [SMI-203](https://linear.app/smileing-goats/issue/SMI-203/founder-attach-omgawdmadeit1sideshot-beer-to-existing-vercel-project).
 Do **not** create a second Vercel project. Agents cannot complete the Git OAuth click.
 
-After this attach, merge `cursor/sideshot-waitlist-capture-7085` (SMI-145). Set waitlist env vars **before** that merge so the first real-capture deploy is not a 503.
+After this attach, merge the current site integration PR (waitlist + metrics + SIDESHOT™ + SafeShot). Set waitlist env vars **before** that merge so the first real-capture deploy is not a 503.
 
 ## Confirm you are in the existing project
 
@@ -56,7 +56,4 @@ Recommended production pair: **`NOTION_TOKEN` + `WAITLIST_NOTIFY_EMAIL`**. The w
 
 ## After attach
 
-Reply **linked** on SMI-203 (or move the issue). Then merge SMI-145 branch `cursor/sideshot-waitlist-capture-7085` into `main`. Do not merge the kitchen-sink `cursor/smi-232-site-source-of-truth-1d72` for this step.
-
-Compare (open PR if one is not already open):
-https://github.com/omgawdmadeit1/sideshot-beer/compare/main...cursor/sideshot-waitlist-capture-7085?quick_pull=1
+Reply **linked** on SMI-203 (or move the issue). Then merge the current integration branch `cursor/integrate-current-site-61fd` into `main`. That branch already includes SMI-145 waitlist capture (from `cursor/sideshot-waitlist-capture-7d98`, not the older `7085` subset), SMI-146 metrics removal, SMI-209 SIDESHOT™ branding, and SMI-148 SafeShot.

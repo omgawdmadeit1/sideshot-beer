@@ -6,11 +6,19 @@ This repository is the **source of truth** for [https://sideshot-beer.vercel.app
 
 ## Stack
 
-Static `index.html` on Vercel plus `POST /api/waitlist`. Production branch: `main`.
+Static HTML on Vercel plus `POST /api/waitlist`. Production branch: `main`.
+
+| Path | Role |
+| --- | --- |
+| `/` | Homepage waitlist (SMI-145). SIDESHOT™ lockup (SMI-209). Unsourced metrics removed (SMI-146). |
+| `/safeshot` | SafeShot™ product page (SMI-148). Price not set. Waitlist CTA. |
+| `/shop/safeshot` | Redirects to `/safeshot`. |
+| `POST /api/waitlist` | Real capture. Writes Notion SIDESHOT Waitlist when `NOTION_TOKEN` is set. |
+| `GET /api/config` | Returns `preorderUrl` only when `SAFESHOT_PREORDER_URL` is set. |
 
 ## Waitlist (SMI-145)
 
-Homepage form posts to `/api/waitlist` (also `/api/sideshot/waitlist`). Signups require a valid email and 21+ confirmation. Success is only returned after a store accepts the write.
+Homepage and SafeShot forms post to `/api/waitlist` (also `/api/sideshot/waitlist`). Signups require a valid email and 21+ confirmation. Success is only returned after a store accepts the write.
 
 Production stores (at least one required on Vercel):
 
@@ -28,7 +36,7 @@ npm run dev   # http://0.0.0.0:4173
 
 Do **not** import this as a new Vercel project. That mints a new `*.vercel.app` URL.
 
-Exact founder clicks + waitlist env vars (`NOTION_TOKEN` / `WAITLIST_NOTIFY_EMAIL`) are in [`docs/vercel-git-attach.md`](docs/vercel-git-attach.md) (Linear SMI-203). After Git attach, merge `cursor/sideshot-waitlist-capture-7085` (SMI-145).
+Exact founder clicks + waitlist env vars (`NOTION_TOKEN` / `WAITLIST_NOTIFY_EMAIL`) are in [`docs/vercel-git-attach.md`](docs/vercel-git-attach.md) (Linear SMI-203). After Git attach, merge this branch into `main`.
 
 ## Agent seating
 
@@ -40,4 +48,4 @@ Unverified numbers (3.8s / 99.8% / $0.65 / 70%+) are not shown. `npm test` fails
 
 ## Known live blockers (do not treat as shipped)
 
-- Waitlist code is in this repo. Live still needs the existing Vercel project connected to Git plus `NOTION_TOKEN` and/or `WAITLIST_NOTIFY_EMAIL` — Linear [SMI-145](https://linear.app/smileing-goats/issue/SMI-145/urgent-replace-fake-waitlist-alert-with-real-email-capture) / [SMI-203](https://linear.app/smileing-goats/issue/SMI-203/founder-attach-omgawdmadeit1sideshot-beer-to-existing-vercel-project)
+- Waitlist and SafeShot code are in this repo. Live still needs the existing Vercel project connected to Git plus `NOTION_TOKEN` and/or `WAITLIST_NOTIFY_EMAIL` — Linear [SMI-145](https://linear.app/smileing-goats/issue/SMI-145/q4-goal-replace-fake-waitlist-with-real-email-capture) / [SMI-203](https://linear.app/smileing-goats/issue/SMI-203/founder-attach-omgawdmadeit1sideshot-beer-to-existing-vercel-project)

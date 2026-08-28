@@ -10,6 +10,7 @@ import {
   normalizeEmail,
   parseWaitlistPayload,
   resolveStoresFromEnv,
+  safeshotConfig,
 } from "../lib/waitlist.js";
 
 function memoryFileStore(seed = []) {
@@ -216,5 +217,14 @@ test("resolveStoresFromEnv wires Notion + notify when configured", () => {
   assert.deepEqual(
     stores.map((store) => store.name),
     ["notion", "notify"],
+  );
+});
+
+test("safeshotConfig hides pre-order until a URL is set", () => {
+  assert.equal(safeshotConfig({}).preorderUrl, null);
+  assert.equal(safeshotConfig({ SAFESHOT_PREORDER_URL: "  " }).preorderUrl, null);
+  assert.equal(
+    safeshotConfig({ SAFESHOT_PREORDER_URL: "https://buy.stripe.com/test" }).preorderUrl,
+    "https://buy.stripe.com/test",
   );
 });

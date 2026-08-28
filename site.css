@@ -1,0 +1,234 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  line-height: 1.5;
+}
+.nav {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px 0;
+  font-size: 0.9rem;
+}
+.nav a { color: #ccc; text-decoration: none; margin-left: 16px; }
+.nav a:hover, .nav a[aria-current="page"] { color: #ff8a00; }
+.logo-lockup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  margin: 40px 0 8px;
+}
+.logo {
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0;
+  background: linear-gradient(90deg, #ff2d2d, #ff8a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tm {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-top: 10px;
+  color: #ff8a00;
+  line-height: 1;
+}
+.logo a { color: inherit; text-decoration: none; }
+.tagline { font-size: 1.5rem; color: #ccc; margin-bottom: 12px; max-width: 560px; }
+.sub { font-size: 1.1rem; color: #888; margin-bottom: 40px; }
+.can-mock {
+  width: 180px;
+  height: 320px;
+  background: linear-gradient(180deg, #222 0%, #111 100%);
+  border-radius: 20px 20px 40px 40px;
+  border: 3px solid #444;
+  position: relative;
+  margin: 0 auto 12px;
+  box-shadow: 0 20px 60px rgba(255,45,45,0.35);
+}
+.score {
+  position: absolute;
+  bottom: 55px;
+  left: 18px;
+  width: 46px;
+  height: 32px;
+  background: #ff2d2d;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.tool-mock {
+  width: 220px;
+  height: 92px;
+  margin: 0 auto 12px;
+  background: linear-gradient(180deg, #3a3a3a, #1a1a1a);
+  border: 2px solid #666;
+  border-radius: 46px;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(255,45,45,0.25);
+}
+.tool-mock::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 32px;
+  width: 28px;
+  height: 28px;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+}
+.tool-mock::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 38px;
+  width: 46px;
+  height: 16px;
+  background: #ff8a00;
+  border-radius: 0 8px 8px 40px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 0 12px;
+}
+.gallery-item {
+  background: #151515;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 20px 12px 16px;
+}
+.gallery-item .tool-mock,
+.gallery-item .can-mock {
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+.gallery-item .can-mock {
+  width: 72px;
+  height: 128px;
+  border-radius: 10px 10px 18px 18px;
+}
+.gallery-item .score {
+  bottom: 22px;
+  left: 8px;
+  width: 22px;
+  height: 16px;
+  font-size: 6px;
+}
+.gallery-item .tool-mock { width: 140px; height: 58px; }
+.gallery-item .tool-mock::before { left: 12px; top: 18px; width: 18px; height: 18px; }
+.gallery-item .tool-mock::after { right: 14px; top: 22px; width: 30px; height: 12px; }
+.gallery-item p { font-size: 0.8rem; color: #666; }
+.caption { font-size: 0.8rem; color: #666; margin-bottom: 28px; max-width: 560px; }
+.cta {
+  background: #ff2d2d;
+  color: white;
+  border: none;
+  padding: 18px 48px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s, background 0.2s;
+}
+.cta:hover { transform: scale(1.05); background: #ff4444; }
+[hidden] { display: none !important; }
+.cta:disabled { opacity: 0.6; cursor: wait; transform: none; }
+.cta.secondary { background: transparent; border: 2px solid #ff2d2d; }
+.form {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 560px;
+}
+.form-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; width: 100%; }
+input[type="email"] {
+  padding: 16px 24px;
+  border-radius: 50px;
+  border: 2px solid #333;
+  background: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+  min-width: 260px;
+  flex: 1;
+}
+input[type="email"]:focus { outline: none; border-color: #ff2d2d; }
+.hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+.interests { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.interests label {
+  font-size: 0.85rem;
+  color: #bbb;
+  border: 1px solid #333;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.interests input { margin-right: 6px; accent-color: #ff2d2d; }
+.age {
+  font-size: 0.9rem;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.age input { accent-color: #ff2d2d; }
+.status { min-height: 1.4em; font-size: 0.95rem; color: #aaa; max-width: 460px; }
+.status.ok, .status[data-kind="ok"] { color: #7dffa3; }
+.status.err, .status[data-kind="error"] { color: #ff8a8a; }
+.status[data-kind="pending"] { color: #ccc; }
+.section { max-width: 680px; margin: 70px auto 0; text-align: left; padding: 0 10px; width: 100%; }
+.section h2 { font-size: 1.6rem; margin-bottom: 16px; color: #ff6b00; }
+.section p, .section li { color: #bbb; margin-bottom: 14px; }
+.tool-card {
+  background: #151515;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 24px;
+  text-align: center;
+}
+.tool-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.spec { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+.spec th, .spec td {
+  border-top: 1px solid #222;
+  padding: 10px 8px;
+  text-align: left;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+.spec th { color: #888; font-weight: 600; width: 38%; }
+.cta-note { color: #888; font-size: 0.95rem; margin-top: 10px; }
+.bundle-note { font-size: 0.95rem; color: #777; }
+footer { margin-top: 80px; color: #555; font-size: 0.9rem; padding-bottom: 40px; }
+.resp { font-size: 0.85rem; color: #666; margin-top: 30px; max-width: 560px; }

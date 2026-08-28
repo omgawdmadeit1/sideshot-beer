@@ -4,6 +4,13 @@
   "rewrites": [
     { "source": "/api/sideshot/waitlist", "destination": "/api/waitlist" }
   ],
+  "redirects": [
+    {
+      "source": "/shop/safeshot",
+      "destination": "/safeshot",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
