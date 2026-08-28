@@ -1,0 +1,10 @@
+{
+  "name": "sideshot-beer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs && node check-no-unverified-metrics.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs"
+  }
+}
