@@ -1,0 +1,10 @@
+{
+  "name": "sideshot-beer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs && node check-no-unverified-metrics.mjs && node check-no-fake-waitlist.mjs && node check-safeshot-page.mjs && python3 legal/safeshot-insurance/check-warning-card.py",
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs"
+  }
+}

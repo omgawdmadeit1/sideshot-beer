@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIDESHOT tool — warning card draft (counsel redline)</title>
+  <style>
+    :root {
+      --ink: #111;
+      --muted: #444;
+      --rule: #c45a00;
+      --paper: #f7f2e8;
+      --draft: #b00020;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      background: #e8e4dc;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .sheet {
+      max-width: 8.5in;
+      margin: 24px auto 48px;
+      padding: 0 16px 32px;
+    }
+    .banner {
+      background: #fff3cd;
+      border: 2px solid var(--draft);
+      color: var(--draft);
+      padding: 12px 16px;
+      margin: 16px 0 20px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 13px;
+    }
+    .banner strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    h1 {
+      font-size: 1.15rem;
+      margin: 0 0 8px;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .meta {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .card {
+      width: 4in;
+      height: 6in;
+      background: var(--paper);
+      border: 1px solid #222;
+      padding: 0.28in 0.3in 0.26in;
+      position: relative;
+      overflow: hidden;
+    }
+    .card .draft-stamp {
+      position: absolute;
+      top: 42%;
+      left: -8%;
+      width: 120%;
+      text-align: center;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      letter-spacing: 0.12em;
+      color: rgba(176, 0, 32, 0.12);
+      transform: rotate(-28deg);
+      pointer-events: none;
+    }
+    .brand {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      color: var(--rule);
+    }
+    .card h2 {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 15px;
+      margin: 8px 0 10px;
+      line-height: 1.25;
+    }
+    .card p, .card li {
+      font-size: 11.5px;
+      margin: 0 0 8px;
+    }
+    .card ul {
+      margin: 0 0 8px;
+      padding-left: 1.1em;
+    }
+    .age {
+      display: inline-block;
+      border: 2px solid var(--ink);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+    .foot {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .actions {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      margin: 18px 0;
+    }
+    button, .print-hint {
+      font: inherit;
+      font-size: 14px;
+    }
+    button {
+      background: #111;
+      color: #fff;
+      border: 0;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+    .source {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+    @media print {
+      body { background: #fff; }
+      .sheet { margin: 0; padding: 0; max-width: none; }
+      .no-print { display: none !important; }
+      .cards { gap: 0.25in; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="banner no-print">
+      <strong>DRAFT — counsel redlines before bag insert</strong>
+      Source: SMI-147 RFQ package §5.2. Not legal advice. Do not ship this wording as-final.
+      Print on 4×6 in cardstock (front + back). One card per tool + split ring in the poly bag.
+    </div>
+
+    <h1 class="no-print">SIDESHOT tool — warning card (print draft)</h1>
+    <p class="meta no-print">SMI-258 · SMI-147 §5.2 · 21+ / responsible drinking required on every public page and every unit.</p>
+
+    <div class="actions no-print">
+      <button type="button" onclick="window.print()">Print 4×6 front + back</button>
+    </div>
+
+    <div class="cards">
+      <article class="card" aria-label="Warning card front">
+        <div class="draft-stamp">DRAFT</div>
+        <div class="brand">SIDESHOT</div>
+        <div class="age">21+ ONLY · NOT A TOY</div>
+        <h2>SIDESHOT tool — ages 21+ only. Not a toy.</h2>
+        <p>This tool has a pointed tip and can puncture metal. Keep away from children. Risk of cuts.</p>
+        <p>For beverage cans and crown-cap bottles only. Do not use on glass bottles as a punch. Do not use as a knife or weapon.</p>
+        <p>If used with alcohol: you are responsible for what you drink. Rapid drinking raises blood-alcohol faster than sipping.</p>
+        <p class="foot">Front · bag insert · draft pending counsel</p>
+      </article>
+
+      <article class="card" aria-label="Warning card back">
+        <div class="draft-stamp">DRAFT</div>
+        <div class="brand">SIDESHOT</div>
+        <h2>Own risk. Drink responsibly.</h2>
+        <p>This product is not for binge drinking, forced consumption, drinking games that pressure others, or anyone under 21.</p>
+        <ul>
+          <li>Do not drink and drive.</li>
+          <li>Do not use if pregnant, if you have alcohol-use disorder, or if alcohol is unsafe for you.</li>
+        </ul>
+        <p>User assumes all risk of injury, intoxication, and property damage. SIDESHOT Beer Co. does not promote excessive drinking.</p>
+        <p><strong>Drink responsibly. 21+ only.</strong></p>
+        <p class="foot">Back · bag insert · draft pending counsel · sideshot-beer.vercel.app</p>
+      </article>
+    </div>
+
+    <p class="source no-print">
+      Verbatim direction from the SMI-147 send-ready package §5.2.
+      Category structure (do not copy):
+      <a href="https://wildmandrinking.com/pages/disclaimers">Wild Man</a>,
+      <a href="https://www.tailgatingideas.com/shotgun-champ/">Shotgun Champ</a>,
+      <a href="https://freedomfunnelusa.com/pages/disclaimer">Freedom Funnel</a>.
+    </p>
+  </div>
+</body>
+</html>
