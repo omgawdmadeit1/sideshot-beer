@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sideshot-beer.vercel.app/sitemap.xml
