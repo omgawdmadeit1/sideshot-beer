@@ -34,3 +34,13 @@ test("homepage uses SIDESHOT™ and links to SafeShot", () => {
   assert.match(safeshot, /SIDESHOT™/);
   assert.match(safeshot, /21\+ only/);
 });
+
+test("homepage and SafeShot have share image + canonical", () => {
+  assert.match(html, /rel="canonical"/);
+  assert.match(html, /og:image/);
+  assert.match(html, /twitter:image/);
+  assert.match(html, /summary_large_image/);
+  assert.match(safeshot, /rel="canonical"/);
+  assert.match(safeshot, /og:image/);
+  assert.match(safeshot, /twitter:image/);
+});
