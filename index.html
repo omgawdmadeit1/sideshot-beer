@@ -24,6 +24,30 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#0a0a0c">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://sideshot-beer.vercel.app/#organization",
+        "name": "SIDESHOT",
+        "url": "https://sideshot-beer.vercel.app/",
+        "logo": "https://sideshot-beer.vercel.app/apple-touch-icon.png",
+        "description": "SIDESHOT Beer Co — Ready cans and SafeShot. 21+ only. Drink responsibly."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sideshot-beer.vercel.app/#website",
+        "url": "https://sideshot-beer.vercel.app/",
+        "name": "SIDESHOT",
+        "publisher": {"@id": "https://sideshot-beer.vercel.app/#organization"},
+        "description": "Join the 21+ waitlist for SIDESHOT and SafeShot."
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <nav class="nav" aria-label="Primary">
