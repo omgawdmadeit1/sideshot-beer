@@ -12,6 +12,9 @@ const required = [
   ["21+ copy", /21\+/],
   ["price not set", /Price<\/th><td>Not set/],
   ["peer price is not ours", /that is not our price/],
+  ["CAD shop-ready", /SS-001 Rev A0 — CAD shop-ready/],
+  ["CAD RFQ-ready", /Shop-ready \/ RFQ-ready/],
+  ["RFQ still open", /RFQ and first article are still open/],
   ["waitlist form", /id="waitlist-form"/],
   ["safeshot source", /name="source" value="safeshot"/],
   ["SafeShot interest", /name="interest" value="SafeShot"/],
@@ -26,6 +29,7 @@ const forbidden = [
   ["invented MSRP", /MSRP\s*\$\d/i],
   ["fake alert success", /onclick="alert\(/],
   ["ship date claim", /ships (today|tomorrow|this week)/i],
+  ["outdated CAD unlocked", /CAD not locked/i],
 ];
 
 let failed = false;
@@ -47,6 +51,11 @@ for (const [name, pattern] of forbidden) {
 if (!homepage.includes('href="/safeshot"')) {
   failed = true;
   console.error("Homepage does not link to /safeshot.");
+}
+
+if (/CAD not locked/i.test(homepage)) {
+  failed = true;
+  console.error("Homepage still claims CAD is not locked.");
 }
 
 if (!vercel.includes("/shop/safeshot") || !vercel.includes("/safeshot")) {
